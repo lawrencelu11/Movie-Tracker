@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1619826371 source:c:\users\lawrence\desktop\cis22\assignment3\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+
