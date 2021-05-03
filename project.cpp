@@ -138,7 +138,6 @@ Movie *createDatabase(int &size)
 //Purpose: Make input not case sensitive
 bool caseInsensitiveCmp(string word1, string word2)
 {
-    string temp = word2;
     if(word1.size() == word2.size())
     {
         for(int i = 0; i < word1.size(); i++)
@@ -159,15 +158,14 @@ bool caseInsensitiveCmp(string word1, string word2)
 //Purpose: Search for movie and its data, and allows save to favorites.
 void findMovie(Movie *movies, int numberOfMovies)
 {
-    ifstream infile;
     char input;
     string movieTitle;
 
     do{
-        infile.open("movies.txt");
+  
         cout << "Enter movie title to search for: ";
         getline(cin, movieTitle);
-        numberOfMovies = numberOfLines(infile);
+        
         bool flag = false;
         for(int i = 0; i < numberOfMovies; i++)
         {
@@ -186,7 +184,7 @@ void findMovie(Movie *movies, int numberOfMovies)
         if(!flag){
             cout << "Error: unable to locate " << "'" << movieTitle << "'\n\n";
         }
-        infile.close();
+ 
     }while(!promptToContinue());
 
 }
